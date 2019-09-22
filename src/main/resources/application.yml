@@ -43,8 +43,32 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
     initialization-mode: always
+  redis:
+    host: 127.0.0.1
+    password: 123456
+  rabbitmq:
+    host: 127.0.0.1
+    username: guest
+    password: guest
+  elasticsearch:
+    jest:
+      uris: http://127.0.0.1:9200
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch # es集群的名称
+      cluster-nodes: 127.0.0.1:9300 # es的连接地址及端口号
+#    port: 5672
+#    virtual-host: # 默认是/
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
+logging:
+  level.com.czz.springboot.mybaits.mapper: debug
+# 日志打印sql
+
+#  configuration:  开启驼峰命名法
+#    map-underscore-to-camel-case: true
+#debug: true # 日志打印报告
+
 
 
